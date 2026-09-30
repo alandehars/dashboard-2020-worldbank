@@ -3,6 +3,7 @@ import json
 import math
 from html import escape
 from pathlib import Path
+from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
 S=json.loads((ROOT/'analysis'/'summary.json').read_text(encoding='utf-8'))
@@ -56,4 +57,49 @@ for r in pairs:
 body+=t(100,432,'GDP per capita (constant 2010 US$), logarithmic scale',12,MUTED)
 body+=t(805,92,'HCI',12,MUTED,anchor='end')
 (OUT/'gdp_hci_scatter.svg').write_text(wrap(body,title='GDP per capita and human capital',subtitle='55 complete country pairs; Spearman rho = 0.879; descriptive association')+'\n',encoding='utf-8')
+
+# PNG counterparts display inline in GitHub's Markdown preview. SVGs remain the editable vector source.
+FONT_DIR=Path('C:/Windows/Fonts')
+def font(size,bold=False):
+    candidate=FONT_DIR/('arialbd.ttf' if bold else 'arial.ttf')
+    return ImageFont.truetype(str(candidate),size) if candidate.exists() else ImageFont.load_default()
+def canvas(title,subtitle):
+    im=Image.new('RGB',(900,450),'#f8faf8');d=ImageDraw.Draw(im)
+    d.text((40,22),title,font=font(24,True),fill=INK)
+    d.text((40,58),subtitle,font=font(13),fill=MUTED)
+    return im,d
+def put(d,x,y,value,size=14,color=INK,bold=False):d.text((x,y),str(value),font=font(size,bold),fill=color)
+
+im,d=canvas('GDP growth: observed extremes','2020 snapshot described by the requester; percentage growth')
+d.line((494,102,494,414),fill=LINE,width=2)
+for i,v in enumerate(items):
+    y=101+i*30;value=v['value'];x=494+min(value,0)*28
+    put(d,40,y,v['country'],13)
+    d.rectangle((x,y,x+max(2,abs(value)*28),y+17),fill=ORANGE if value<0 else TEAL)
+    put(d,752,y,f'{value:+.2f}%',13,bold=True)
+put(d,40,417,'Selected extremes among 55 countries with reported GDP growth. Bars use a common zero line.',12,MUTED)
+im.save(OUT/'gdp_growth_extremes.png')
+
+im,d=canvas('Coverage differs by indicator','Number of selected countries with a reported value')
+for i,(name,n) in enumerate(coverage):
+    y=101+i*43;put(d,40,y,name,14)
+    d.rectangle((252,y,737,y+19),fill=PALE)
+    d.rectangle((252,y,252+round(485*n/57),y+19),fill=TEAL)
+    put(d,768,y,f'{n} / 57',14,bold=True)
+put(d,40,418,'Blank source cells are missing; they are not replaced with zero.',12,MUTED)
+im.save(OUT/'indicator_coverage.png')
+
+im,d=canvas('GDP per capita and human capital','55 complete country pairs; Spearman rho = 0.879; descriptive association')
+for tick in (.4,.5,.6,.7,.8,.9):
+    y=380-(tick-.35)/.6*270
+    d.line((97,y,835,y),fill=LINE,width=1);put(d,54,y-7,f'{tick:.1f}',12,MUTED)
+for tick in (500,1000,10000,100000):
+    x=100+(math.log10(tick)-low_log)/(high_log-low_log)*690
+    d.line((x,101,x,380),fill=LINE,width=1);put(d,x-23,389,f'${tick:,}',12,MUTED)
+for r in pairs:
+    x=100+(math.log10(r[xkey])-low_log)/(high_log-low_log)*690;y=380-(r[ykey]-.35)/.6*270
+    d.ellipse((x-5,y-5,x+5,y+5),fill=TEAL)
+put(d,100,418,'GDP per capita (constant 2010 US$), logarithmic scale',12,MUTED)
+put(d,785,82,'HCI',12,MUTED)
+im.save(OUT/'gdp_hci_scatter.png')
 print(*(str(p) for p in OUT.iterdir()),sep='\n')

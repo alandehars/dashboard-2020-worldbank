@@ -28,7 +28,7 @@ This file includes large economies and some small ones but does not explain its 
 
 The country-level median GDP growth rate is -4.02%. Negative growth appears in 45 of the 55 countries with observations. Because this is a one-year cross-section, the dataset cannot establish a time trend, quantify recovery, or isolate the causes of the 2020 downturn. GDP growth is an annual real output change according to the World Bank indicator definition; it is distinct from the level of GDP or nominal spending.
 
-![Observed extremes in GDP growth](figures/gdp_growth_extremes.svg)
+![Observed extremes in GDP growth](figures/gdp_growth_extremes.png)
 
 | Lowest observed GDP growth | % | Highest observed GDP growth | % |
 |---|---:|---|---:|
@@ -52,7 +52,7 @@ GDP per capita is reported in **constant 2010 US dollars** for 55 countries. The
 
 The HCI values range from 0.361 (Nigeria) to 0.879 (Singapore) in the selected countries. GDP per capita and HCI move strongly together by rank (rho=0.879, n=55). This is a cross-sectional association with no controls for region, population, institutions, or measurement differences. It is useful for exploration, not causal inference.
 
-![GDP per capita and human capital scatterplot](figures/gdp_hci_scatter.svg)
+![GDP per capita and human capital scatterplot](figures/gdp_hci_scatter.png)
 
 ## 4. Labor, digital access and institutional measures
 
@@ -76,7 +76,7 @@ Demographic structure also differs. The median young age-dependency ratio is **3
 
 The indicators are not equally complete. Population, HCI, age dependency, unemployment and several other fields have all 57 records. GDP growth and GDP per capita each have 55. Final consumption expenditure as a share of GDP has 48. Internet use has **29**. Domestic credit provided by the financial sector has only **12**, so it should not support a broad country ranking here. The dashboard shows the observed count whenever a metric is selected and does not fill gaps with zero.
 
-![Indicator coverage chart](figures/indicator_coverage.svg)
+![Indicator coverage chart](figures/indicator_coverage.png)
 
 Internal arithmetic checks found no discrepancy between female plus male population and total population in any row. The old plus young age-dependency ratios match the total dependency ratio within floating-point rounding (maximum absolute difference about 0.00000001 percentage point). No urban population exceeds total population, and no total population is negative. These checks support basic file consistency; they do not verify the original World Bank extraction, vintage, or definitions.
 
