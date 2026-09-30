@@ -6,7 +6,7 @@ An interactive, source-traceable analysis of the user-supplied 2020 World Bank f
 
 Open `dashboard/index.html` in a browser. It uses local JavaScript and has no external library or network dependency. Filter by source region or country name, compare two measures in the bubble chart, rank countries, inspect data coverage and download the filtered rows as CSV. Blank source cells stay missing.
 
-The published dashboard is at [alandehars.github.io/dashboard-2020-worldbank](https://alandehars.github.io/dashboard-2020-worldbank/) once GitHub Pages completes its first build.
+Use the [live dashboard](https://alandehars.github.io/dashboard-2020-worldbank/) on GitHub Pages. The report includes inline charts, a research verdict and recommendations. The dashboard lets you compare all 59 source indicators, with missing-value counts visible for each ranking.
 
 ## Rebuild the analysis
 
