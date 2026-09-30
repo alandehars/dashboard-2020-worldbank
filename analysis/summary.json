@@ -1,0 +1,398 @@
+{
+  "countries": 57,
+  "columns": 61,
+  "numeric_indicators": 59,
+  "regions": 17,
+  "nonmissing_numeric_cells": 2692,
+  "numeric_cells": 3363,
+  "sample_population": 6199132801.0,
+  "growth_n": 55,
+  "growth_negative_n": 45,
+  "growth_positive_n": 10,
+  "growth_median": -4.020317714,
+  "gdp_pc_n": 55,
+  "gdp_pc_median": 9322.335713,
+  "hci_median": 0.628506422,
+  "sample_urban_share": 0.5640880039601526,
+  "missing": {
+    "Adults (ages 15+) and children (ages 0-14) newly infected with HIV": 14,
+    "Adults (ages 15-49) newly infected with HIV": 15,
+    "Age dependency ratio (% of working-age population)": 0,
+    "Age dependency ratio, old (% of working-age population)": 0,
+    "Age dependency ratio, young (% of working-age population)": 0,
+    "Arms exports (SIPRI trend indicator values)": 31,
+    "Arms imports (SIPRI trend indicator values)": 5,
+    "Automated teller machines (ATMs) (per 100,000 adults)": 19,
+    "Average transaction cost of sending remittances from a specific country (%)": 27,
+    "Average transaction cost of sending remittances to a specific country (%)": 25,
+    "Bank capital to assets ratio (%)": 14,
+    "Bank liquid reserves to bank assets ratio (%)": 21,
+    "Bank nonperforming loans to total gross loans (%)": 13,
+    "Charges for the use of intellectual property, payments (BoP, current US$)": 13,
+    "Charges for the use of intellectual property, receipts (BoP, current US$)": 13,
+    "Commercial bank branches (per 100,000 adults)": 16,
+    "Computer, communications and other services (% of commercial service exports)": 11,
+    "Computer, communications and other services (% of commercial service imports)": 11,
+    "Consumer price index (2010 = 100)": 4,
+    "Domestic credit provided by financial sector (% of GDP)": 45,
+    "Domestic credit to private sector (% of GDP)": 15,
+    "Domestic credit to private sector by banks (% of GDP)": 10,
+    "Employment to population ratio, 15+, female (%) (national estimate)": 21,
+    "Employment to population ratio, 15+, male (%) (national estimate)": 21,
+    "Employment to population ratio, 15+, total (%) (national estimate)": 21,
+    "Employment to population ratio, ages 15-24, female (%) (national estimate)": 22,
+    "Employment to population ratio, ages 15-24, male (%) (national estimate)": 22,
+    "Employment to population ratio, ages 15-24, total (%) (national estimate)": 22,
+    "Final consumption expenditure (% of GDP)": 9,
+    "Final consumption expenditure (annual % growth)": 10,
+    "Final consumption expenditure (constant 2010 US$)": 11,
+    "Final consumption expenditure (constant LCU)": 10,
+    "Final consumption expenditure (current LCU)": 9,
+    "Final consumption expenditure (current US$)": 9,
+    "Fixed broadband subscriptions": 4,
+    "Fixed broadband subscriptions (per 100 people)": 4,
+    "Fixed telephone subscriptions": 4,
+    "Fixed telephone subscriptions (per 100 people)": 4,
+    "GDP (constant 2010 US$)": 2,
+    "GDP growth (annual %)": 2,
+    "GDP per capita (constant 2010 US$)": 2,
+    "GNI (constant 2010 US$)": 23,
+    "GNI growth (annual %)": 22,
+    "GNI per capita (constant 2010 US$)": 23,
+    "High-technology exports (current US$)": 15,
+    "Human capital index (HCI) (scale 0-1)": 0,
+    "Individuals using the Internet (% of population)": 28,
+    "Labor force, total": 0,
+    "Military expenditure (% of GDP)": 2,
+    "Population density (people per sq. km of land area)": 0,
+    "Population growth (annual %)": 0,
+    "Population, female": 0,
+    "Population, male": 0,
+    "Population, total": 0,
+    "Ratio of female to male labor force participation rate (%) (national estimate)": 25,
+    "Total reserves (includes gold, current US$)": 2,
+    "Unemployment, total (% of total labor force) (modeled ILO estimate)": 0,
+    "Urban population": 0,
+    "Women Business and the Law Index Score (scale 1-100)": 0
+  },
+  "regions_detail": [
+    {
+      "region": "CentralAmerica",
+      "n": 1,
+      "population": 128932753.0,
+      "growth_n": 1,
+      "median_growth": -8.239473277,
+      "median_gdp_pc": 9322.335713
+    },
+    {
+      "region": "CentralAsia",
+      "n": 1,
+      "population": 18754440.0,
+      "growth_n": 1,
+      "median_growth": -2.6,
+      "median_gdp_pc": 11075.00816
+    },
+    {
+      "region": "EasternAfrica",
+      "n": 3,
+      "population": 214475883.0,
+      "growth_n": 3,
+      "median_growth": 2.857581274,
+      "median_gdp_pc": 958.1926982
+    },
+    {
+      "region": "EasternAsia",
+      "n": 2,
+      "population": 1527948021.0,
+      "growth_n": 1,
+      "median_growth": 2.3,
+      "median_gdp_pc": 8405.180473
+    },
+    {
+      "region": "EasternEurope",
+      "n": 4,
+      "population": 110770479.0,
+      "growth_n": 4,
+      "median_growth": -3.280541394,
+      "median_gdp_pc": 9171.425323
+    },
+    {
+      "region": "NorthernAfrica",
+      "n": 4,
+      "population": 194914622.0,
+      "growth_n": 4,
+      "median_growth": -6.299112052,
+      "median_gdp_pc": 3555.4534270000004
+    },
+    {
+      "region": "NorthernAmerica",
+      "n": 2,
+      "population": 367489361.0,
+      "growth_n": 2,
+      "median_growth": -4.444469055,
+      "median_gdp_pc": 51183.02966
+    },
+    {
+      "region": "NorthernEurope",
+      "n": 4,
+      "population": 26559045.0,
+      "growth_n": 4,
+      "median_growth": -1.74788324,
+      "median_gdp_pc": 72588.580305
+    },
+    {
+      "region": "Oceania",
+      "n": 1,
+      "population": 25687041.0,
+      "growth_n": 1,
+      "median_growth": -0.284839298,
+      "median_gdp_pc": 56307.28068
+    },
+    {
+      "region": "South-easternAsia",
+      "n": 6,
+      "population": 588295072.0,
+      "growth_n": 6,
+      "median_growth": -5.489383042,
+      "median_gdp_pc": 5203.3929775
+    },
+    {
+      "region": "SouthAmerica",
+      "n": 6,
+      "population": 378550171.0,
+      "growth_n": 6,
+      "median_growth": -7.298718791500001,
+      "median_gdp_pc": 7960.572296
+    },
+    {
+      "region": "SouthernAfrica",
+      "n": 1,
+      "population": 59308690.0,
+      "growth_n": 1,
+      "median_growth": -6.959604452,
+      "median_gdp_pc": 6748.234355
+    },
+    {
+      "region": "SouthernAsia",
+      "n": 5,
+      "population": 1816641907.0,
+      "growth_n": 5,
+      "median_growth": -2.088378695,
+      "median_gdp_pc": 1305.259332
+    },
+    {
+      "region": "SouthernEurope",
+      "n": 4,
+      "population": 127926703.0,
+      "growth_n": 4,
+      "median_growth": -8.5594412315,
+      "median_gdp_pc": 26185.017144999998
+    },
+    {
+      "region": "WesternAfrica",
+      "n": 2,
+      "population": 237212532.0,
+      "growth_n": 2,
+      "median_growth": -0.689904807,
+      "median_gdp_pc": 2060.7344285
+    },
+    {
+      "region": "WesternAsia",
+      "n": 5,
+      "population": 178482737.0,
+      "growth_n": 4,
+      "median_growth": -3.273284664,
+      "median_gdp_pc": 17307.816765
+    },
+    {
+      "region": "WesternEurope",
+      "n": 6,
+      "population": 197183344.0,
+      "growth_n": 6,
+      "median_growth": -5.5902377004999995,
+      "median_gdp_pc": 46036.896445
+    }
+  ],
+  "top_population": [
+    {
+      "country": "China",
+      "value": 1402112000.0
+    },
+    {
+      "country": "India",
+      "value": 1380004385.0
+    },
+    {
+      "country": "United States of America",
+      "value": 329484123.0
+    },
+    {
+      "country": "Indonesia",
+      "value": 273523621.0
+    },
+    {
+      "country": "Pakistan",
+      "value": 220892331.0
+    },
+    {
+      "country": "Brazil",
+      "value": 212559409.0
+    },
+    {
+      "country": "Nigeria",
+      "value": 206139587.0
+    },
+    {
+      "country": "Bangladesh",
+      "value": 164689383.0
+    },
+    {
+      "country": "Mexico",
+      "value": 128932753.0
+    },
+    {
+      "country": "Japan",
+      "value": 125836021.0
+    }
+  ],
+  "top_gdp_pc": [
+    {
+      "country": "Norway",
+      "value": 90884.6146
+    },
+    {
+      "country": "Ireland",
+      "value": 81297.06695
+    },
+    {
+      "country": "Switzerland",
+      "value": 80132.42559
+    },
+    {
+      "country": "Denmark",
+      "value": 63880.09366
+    },
+    {
+      "country": "Singapore",
+      "value": 56349.02942
+    },
+    {
+      "country": "Australia",
+      "value": 56307.28068
+    },
+    {
+      "country": "Sweden",
+      "value": 56068.25646
+    },
+    {
+      "country": "United States of America",
+      "value": 53748.97143
+    },
+    {
+      "country": "Netherlands",
+      "value": 53081.31101
+    },
+    {
+      "country": "Canada",
+      "value": 48617.08789
+    }
+  ],
+  "bottom_growth": [
+    {
+      "country": "Peru",
+      "value": -11.14881188
+    },
+    {
+      "country": "Spain",
+      "value": -10.83894734
+    },
+    {
+      "country": "Iraq",
+      "value": -10.36509018
+    },
+    {
+      "country": "Argentina",
+      "value": -9.905234856
+    },
+    {
+      "country": "Philippines",
+      "value": -9.573029875
+    },
+    {
+      "country": "Italy",
+      "value": -8.871146348
+    },
+    {
+      "country": "Tunisia",
+      "value": -8.600310283
+    },
+    {
+      "country": "Greece",
+      "value": -8.247736115
+    },
+    {
+      "country": "Mexico",
+      "value": -8.239473277
+    },
+    {
+      "country": "France",
+      "value": -8.114907097
+    }
+  ],
+  "top_growth": [
+    {
+      "country": "Ethiopia",
+      "value": 6.056617792
+    },
+    {
+      "country": "Egypt",
+      "value": 3.569669475
+    },
+    {
+      "country": "Ireland",
+      "value": 3.417815527
+    },
+    {
+      "country": "Viet Nam",
+      "value": 2.905835584
+    },
+    {
+      "country": "Uganda",
+      "value": 2.857581274
+    },
+    {
+      "country": "Bangladesh",
+      "value": 2.375521656
+    },
+    {
+      "country": "China",
+      "value": 2.3
+    },
+    {
+      "country": "Turkey",
+      "value": 1.756650763
+    },
+    {
+      "country": "Pakistan",
+      "value": 0.525527439
+    },
+    {
+      "country": "Ghana",
+      "value": 0.414443468
+    }
+  ],
+  "association_gdp_pc_hci": {
+    "n": 55,
+    "rho": 0.8793650793650793
+  },
+  "association_urban_hci": {
+    "n": 57,
+    "rho": -0.3165672802696396
+  },
+  "audit": {
+    "female_plus_male_population_max_abs_error": 0.0,
+    "age_dependency_components_max_abs_error": 1.0000007932831068e-08,
+    "urban_exceeds_population_count": 0,
+    "negative_population_count": 0
+  }
+}
