@@ -5,7 +5,7 @@
     gdppc: 'GDP per capita (constant 2010 US$)', hci: 'Human capital index (HCI) (scale 0-1)',
     urban: 'Urban population', consumption: 'Final consumption expenditure (% of GDP)'
   };
-  const metrics = [
+  const featured = [
     [keys.gdppc, 'GDP per capita (constant 2010 US$)', '$'],
     [keys.growth, 'GDP growth (annual %)', '%'],
     [keys.hci, 'Human capital index', 'decimal'],
@@ -18,13 +18,18 @@
     ['Military expenditure (% of GDP)', 'Military expenditure (% of GDP)', '%'],
     ['Fixed broadband subscriptions (per 100 people)', 'Fixed broadband subscriptions', 'per 100']
   ];
+  const featuredKeys = new Set(featured.map(m => m[0]));
+  const metrics = [...featured, ...columns.slice(2).filter(key => !featuredKeys.has(key)).map(key => [
+    key, key, key.includes('scale 0-1') ? 'decimal' : key.includes('%') ? '%' : key.includes('US$') ? '$' : /Population|subscriptions|total|imports|exports/i.test(key) ? 'count' : 'number'
+  ])];
   const metricMap = Object.fromEntries(metrics.map(m => [m[0], m]));
   const el = id => document.getElementById(id);
   const fmt = (v, type, digits=1) => {
     if (v == null || !Number.isFinite(v)) return '—';
     if (type === 'count') return Math.abs(v) >= 1e9 ? (v/1e9).toFixed(2)+'bn' : Math.abs(v) >= 1e6 ? (v/1e6).toFixed(1)+'m' : Math.round(v).toLocaleString();
-    if (type === '$') return '$'+Math.round(v).toLocaleString();
+    if (type === '$') return '$'+(Math.abs(v)>=1e9 ? (v/1e9).toFixed(2)+'bn' : Math.abs(v)>=1e6 ? (v/1e6).toFixed(1)+'m' : Math.round(v).toLocaleString());
     if (type === 'decimal') return v.toFixed(3);
+    if (type === 'number' && Math.abs(v)>=1e6) return fmt(v,'count');
     return v.toFixed(digits)+(type === '%' ? '%' : '');
   };
   const median = values => { const a = values.filter(v => v != null).sort((x,y)=>x-y); return a.length ? (a[(a.length-1)>>1]+a[a.length>>1])/2 : null; };
@@ -32,7 +37,12 @@
   const regions = [...new Set(rows.map(r=>r.Region))].sort();
   const color = region => palette[regions.indexOf(region)%palette.length];
   regions.forEach(name => el('region').add(new Option(name.replace(/([a-z])([A-Z])/g,'$1 $2'),name)));
-  for (const id of ['xmetric','ymetric','rankmetric']) metrics.forEach(m=>el(id).add(new Option(m[1],m[0])));
+  for (const id of ['xmetric','ymetric','rankmetric']) {
+    for(const [label,items] of [['Featured measures',featured],['All other source indicators',metrics.slice(featured.length)]]){
+      const group=document.createElement('optgroup');group.label=label;
+      items.forEach(m=>group.append(new Option(m[1],m[0])));el(id).append(group);
+    }
+  }
   el('xmetric').value = keys.gdppc; el('ymetric').value=keys.hci; el('rankmetric').value=keys.growth;
   const selected = () => rows.filter(r => (!el('region').value || r.Region===el('region').value) && r.country.toLowerCase().includes(el('search').value.trim().toLowerCase()));
   const svgNode = (tag, attrs={}) => { const n=document.createElementNS('http://www.w3.org/2000/svg',tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; };

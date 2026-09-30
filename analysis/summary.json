@@ -385,10 +385,6 @@
     "n": 55,
     "rho": 0.8793650793650793
   },
-  "association_urban_hci": {
-    "n": 57,
-    "rho": -0.3165672802696396
-  },
   "audit": {
     "female_plus_male_population_max_abs_error": 0.0,
     "age_dependency_components_max_abs_error": 1.0000007932831068e-08,

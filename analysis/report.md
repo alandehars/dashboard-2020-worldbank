@@ -54,7 +54,25 @@ The HCI values range from 0.361 (Nigeria) to 0.879 (Singapore) in the selected c
 
 ![GDP per capita and human capital scatterplot](figures/gdp_hci_scatter.svg)
 
-## 4. Missing data and internal checks
+## 4. Labor, digital access and institutional measures
+
+The remaining domains add context but require attention to their definitions and sample sizes. The medians below are country medians of reported values, not official world aggregates.
+
+| Indicator | Observed countries | Sample median | Reading |
+|---|---:|---:|---|
+| Unemployment, total (modeled ILO estimate) | 57 | 5.92% | Share of the labor force; modeled values are not all direct national observations |
+| Female employment-to-population ratio, 15+ (national estimate) | 36 | 51.35% | Limited national-estimate subset |
+| Male employment-to-population ratio, 15+ (national estimate) | 36 | 62.96% | Same 36-country subset |
+| Fixed broadband subscriptions per 100 people | 53 | 21.18 | Subscriptions, not unique users |
+| Individuals using the Internet | 29 | 85.09% | High missingness makes this median especially selection-sensitive |
+| Women, Business and the Law score | 57 | 81.88 / 100 | A legal-framework score, not a direct measure of lived outcomes |
+| Bank nonperforming loans to gross loans | 44 | 3.48% | A reported banking-system ratio; coverage varies |
+
+Among the 36 countries with both national-estimate employment ratios, the median within-country male-minus-female difference is **12.55 percentage points**. This paired statistic does not estimate a world gender employment gap. The World Bank's Women, Business and the Law metadata describes its score as a measure of how laws and regulations affect women's economic opportunity, so the score should not be interpreted as proof that those laws are enforced or that employment outcomes are equal.
+
+Demographic structure also differs. The median young age-dependency ratio is **32.26%** and the median old-age ratio is **17.02%** across the 57 countries. These separate country medians need not sum to the median total dependency ratio (**53.34%**), because medians are nonlinear. For any one country, however, the two components reconcile to the total ratio within rounding in this file.
+
+## 5. Missing data and internal checks
 
 The indicators are not equally complete. Population, HCI, age dependency, unemployment and several other fields have all 57 records. GDP growth and GDP per capita each have 55. Final consumption expenditure as a share of GDP has 48. Internet use has **29**. Domestic credit provided by the financial sector has only **12**, so it should not support a broad country ranking here. The dashboard shows the observed count whenever a metric is selected and does not fill gaps with zero.
 
@@ -88,3 +106,4 @@ Values were parsed as numeric where present, with empty CSV cells treated as mis
 
 - Primary supplied source: `data/final_demographics_data.csv` (user-provided file; attributed by the requester to [World Bank Data](https://data.worldbank.org/)).
 - World Bank metadata: [GDP growth (annual %)](https://databank.worldbank.org/metadataglossary/sustainable-development-goals-%28sdgs%29/series/NY.GDP.MKTP.KD.ZG), [Population, total](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SP.POP.TOTL), [Urban population](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SP.URB.TOTL). These metadata pages explain concepts; the supplied CSV's exact extraction vintage is unknown.
+- Additional World Bank metadata: [Human Capital Index](https://databank.worldbank.org/metadataglossary/health-nutrition-and-population-statistics/series/HD.HCI.OVRL), [unemployment modeled ILO estimate](https://databank.worldbank.org/metadataglossary/health-nutrition-and-population-statistics/series/SL.UEM.TOTL.ZS), and [Women, Business and the Law score](https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SG.LAW.INDX).

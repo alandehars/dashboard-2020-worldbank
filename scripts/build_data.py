@@ -104,7 +104,6 @@ summary = {
     "top_population": ranked(POP), "top_gdp_pc": ranked(GDP_PC),
     "bottom_growth": ranked(GROWTH, False), "top_growth": ranked(GROWTH),
     "association_gdp_pc_hci": spearman(GDP_PC, HCI),
-    "association_urban_hci": spearman(URBAN, HCI),
     "audit": audit,
 }
 SUMMARY.parent.mkdir(parents=True, exist_ok=True)
